@@ -45,6 +45,13 @@ namespace Ex1
             }
         }
 
+        public SimpleFraction Add(SimpleFraction a)
+        {
+            var x = X * a.Y + a.X * Y;
+            var y = Y * a.Y;
+            return new SimpleFraction(x, y);
+        }
+
         public static SimpleFraction operator +(SimpleFraction a, SimpleFraction b)
         {
             var x = a.X * b.Y + b.X * a.Y;
