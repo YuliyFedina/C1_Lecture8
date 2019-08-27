@@ -4,13 +4,22 @@ namespace Ex1.Model.Accounts
 {
     public abstract class BankAccount
     {
-        public BankAccount(long id, decimal sum, long owner)
+        public BankAccount(long id, decimal sum, long owner, bool isActive)
         {
             Id = id;
             Sum = sum;
             Owner = owner;
-            IsActive = true;
+            IsActive = isActive;
         }
+
+        public BankAccount(long id, decimal sum, bool isActive) : this(id, sum, 0, isActive)
+        {
+        }
+
+        public BankAccount(long id, decimal sum, long owner) : this(id, sum, owner, true)
+        {
+        }
+
 
         public BankAccount(long id, decimal sum) : this(id, sum, 0)
         {
